@@ -1,0 +1,10 @@
+<table class="table table-bordered">
+    <th *ngFor="let column of headers">
+        {{column}}
+    </th>
+    <tr *ngFor="let vol of vols">
+        <td *ngFor="let column of headers">
+            {{vol[column]}}
+        </td>
+    </tr>
+</table>

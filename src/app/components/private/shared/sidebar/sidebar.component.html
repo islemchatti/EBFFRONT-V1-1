@@ -1,0 +1,100 @@
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <hr class="sidebar-divider">
+    <li class="nav-item active">
+        <a class="nav-link" href="index.html">
+            <div class="menubar">
+                <i class="fas fa-bars"></i>
+                <span class="dashicons2">Menu</span>
+            </div>
+        </a>
+    </li>
+
+
+
+
+    <!-- Divider -->
+    <hr *ngIf="user" class="sidebar-divider">
+
+    <!-- Retraite -->
+    <li *ngIf="user" class="nav-item">
+        <a class="nav-link" [routerLink]="['/retraite/dashboard']">
+            <i class="fas fa-plane-departure"></i>
+            <span class="dashicons1">Billets de faveur</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+
+        </div>
+    </li>
+    <!-- Divider -->
+    <hr *ngIf="user" class="sidebar-divider">
+
+    <li *ngIf="user" class="nav-item">
+        <a class="nav-link" [routerLink]="['/retraite/actualites']">
+            <i class="far fa-newspaper"></i>
+            <span class="dashicons1">Actualités</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+            data-parent="#accordionSidebar">
+        </div>
+    </li>
+    <!-- Divider -->
+    <hr *ngIf="user" class="sidebar-divider">
+
+    <li *ngIf="user" class="nav-item">
+        <a class="nav-link" [routerLink]="['/register']">
+            <i class="fas fa-money-check"></i>
+            <span class="dashicons1">Cotisations</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+
+        </div>
+    </li>
+    <!-- Divider -->
+    <hr *ngIf="user" class="sidebar-divider">
+
+
+    <li *ngIf="user" class="nav-item">
+        <a class="nav-link" [routerLink]="['/register']">
+            <i class="fas fa-fw fa-folder"></i>
+            <span class="dashicons1">Dossier CNSS</span>
+        </a>
+    </li>
+    <!-- Divider -->
+    <hr *ngIf="admin" class="sidebar-divider d-none d-md-block">
+
+     <!-- Admin -->
+     <li *ngIf="admin" class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/dashboard']">
+            <i class="fas fa-user-friends"></i>
+            <span class="dashicons1">Gestion des retraités</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+
+        </div>
+    </li>
+    <!-- Divider -->
+    <hr *ngIf="admin" class="sidebar-divider">
+
+    <li *ngIf="admin" class="nav-item">
+        <a class="nav-link" [routerLink]="['/']">
+            <i class="far fa-newspaper"></i>
+            <span class="dashicons1">Gestion des articles</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+            data-parent="#accordionSidebar">
+        </div>
+    </li>
+    <!-- Divider -->
+    <hr *ngIf="admin" class="sidebar-divider">
+
+
+
+</ul>

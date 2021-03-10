@@ -1,0 +1,178 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Navbar -->
+            <app-navbar></app-navbar>
+            <!-- End of Navbar -->
+
+            <!-- Beging DAAASHBOOAARD -->
+            <div class="container-fluid">
+
+                <!-- Content Row -->
+
+
+                <div class="row">
+
+                    <!-- Area Chart -->
+                    <div class="col-xl-8 col-lg-7">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h3 class="m-0 font-weight-bold text-primary">Réserver</h3>
+                                <div class="dropdown no-arrow">
+                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                        aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item" href="#">Enregistrer en Ligne</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Consulter/Modifier</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <!-- ICIIIIIIIII -->
+                                <app-moteur></app-moteur>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Caroussel -->
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h3 class="m-0 font-weight-bold text-primary">Actualités</h3>
+
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <div class=" pt-4 pb-2">
+                                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                            <ol class="carousel-indicators">
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="0"
+                                                    class="active"></li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                            </ol>
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <div class="card c1" style="width: 18rem;">
+                                                        <img class="card-img-top"
+                                                            src="https://www.espacemanager.com/sites/default/files/olfa_hamdi_ta_2102.png"
+                                                            alt="Card image cap">
+                                                        <div class="card-body">
+                                                            <p class="card-text">Hamdi Olfa...
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <div class="card c1" style="width: 18rem;">
+                                                        <img class="card-img-top photo"
+                                                            src="https://www.destinationtunisie.info/wp-content/uploads/2019/04/avion_tunisair_aeroport_tunis_carthage_airbus-a320_aziza_othmana.jpg"
+                                                            alt="Card image cap">
+                                                        <div class="card-body">
+                                                            <p class="card-text">Tunisair...
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <div class="card c1" style="width: 18rem;">
+                                                        <img class="card-img-top"
+                                                            src="https://i2.wp.com/lapresse.tn/wp-content/uploads/2019/05/tunisair.jpg?fit=2000%2C1155&ssl=1"
+                                                            alt="Card image cap">
+                                                        <div class="card-body">
+                                                            <p class="card-text">Tunisair...
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <a class="carousel-control-prev" href="#carouselExampleIndicators"
+                                                role="button" data-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#carouselExampleIndicators"
+                                                role="button" data-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row bb">
+
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <button type="button" class="b1 btn btn-outline-danger"
+                                            routerLink="/retraite/actualites">Voir plus</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; Tunisair 2021</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
+
+            </div>
+            <!-- End of DASHBOAAARD -->
+
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Allez-vous quitter ?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Sélectionnez se déconnecter si vous êtes prêts à arrêter votre session</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                        <a class="btn btn-primary" [routerLink]="['/register']">Se déconnecter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
