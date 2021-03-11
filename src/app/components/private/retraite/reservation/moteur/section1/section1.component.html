@@ -1,45 +1,70 @@
-<form class="user">
-    <div class="row">
+<form [formGroup]="reserverForm" class="user" (ngSubmit)="reserverUser()">
+    <hr class="sidebar-divider">
+    <label>Billet :</label>
+    <div class="form-group row">
+
         <div class="col-sm-4">
-            <input class="rdb" type="radio" name="options" id="option1" autocomplete="off" checked>
-            <label for="examplegenre" class="ls1">Aller simple</label>
+            <input class="rdb" id="allersimple" type="radio" autocomplete="off" value="allersimple" name="billet"
+                formControlName="billet">
+            <label for="allersimple">Aller Simple</label>
         </div>
+
         <div class="col-sm-4">
-            <input class="rdb" type="radio" name="options" id="option2" autocomplete="off">
-            <label for="examplegenre">Aller retour</label>
+            <input class="rdb" id="allerretour" type="radio" autocomplete="off" value="allerretour" name="billet"
+                formControlName="billet">
+            <label for="allerretour">Aller Retour</label>
         </div>
         <div class="col-sm-4">
             <a href="#">Multidestinations</a>
         </div>
     </div>
+
+
     <hr class="sidebar-divider">
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6 m2">
             <label for="examplegenre">De :</label>
-            <select name="hf" class="form-control form-control-user" id="examplegenre">
-                <option value="h">Tunis</option>
-                <option value="f">Paris</option>
+            <select name="hf" class="form-control form-control-user" id="examplegenre" formControlName="locdepart">
+                <option value="Tunis">Tunis</option>
+                <option value="Paris">Paris</option>
             </select>
-
+            <div *ngIf="locdepart.touched && locdepart.invalid" class="text-danger m1">
+                <div *ngIf="locdepart.errors.required"class="fs-6 fw-lighter"><h5>* Champ obligatoire</h5></div>
+            </div>
         </div>
-        <div class="col-sm-6">
+        
+
+        <div class="col-sm-6 m2" >
             <label for="examplegenre">Vers :</label>
-            <select name="hf" class="form-control form-control-user" id="examplegenre">
-                <option value="h">Tunis</option>
-                <option value="f">Paris</option>
+            <select name="hf" class="form-control form-control-user" id="examplegenre" formControlName="locarrive">
+                <option value="Tunis">Tunis</option>
+                <option value="Paris">Paris</option>
             </select>
-
+            <div *ngIf="locarrive.touched && locarrive.invalid" class="text-danger m1">
+                <div *ngIf="locarrive.errors.required"class="fs-6 fw-lighter"><h5>* Champ obligatoire</h5></div>
+            </div>
         </div>
+        
     </div>
     <div class="row">
-        <div class="col-sm-6 mb-3 mb-sm-0">
+        <div class="col-sm-6 mb-3 mb-sm-0 m2" >
             <label for="exampledatenaissance">Vol aller :</label>
-            <input type="date" class="form-control form-control-user" id="exampledatenaissance" placeholder="Date">
+            <input type="date" class="form-control form-control-user" id="exampledatenaissance" placeholder="Date"
+                formControlName="datedepart">
+                <div *ngIf="datedepart.touched && datedepart.invalid" class="text-danger m1">
+                    <div *ngIf="datedepart.errors.required" class="fs-6 fw-lighter"><h5>* Champ obligatoire</h5></div>
+                </div>
         </div>
-        <div class="col-sm-6 mb-3 mb-sm-0">
+        
+        <div class="col-sm-6 mb-3 mb-sm-0 m2">
             <label for="exampledatenaissance">Vol retour :</label>
-            <input type="date" class="form-control form-control-user" id="exampledatenaissance" placeholder="Date">
+            <input type="date" class="form-control form-control-user" id="exampledatenaissance" placeholder="Date"
+                formControlName="datearrive">
+                <div *ngIf="datearrive.touched && datearrive.invalid" class="text-danger m1">
+                    <div *ngIf="datearrive.errors.required"class="fs-6 fw-lighter"><h5>* Champ obligatoire</h5></div>
+                </div>
         </div>
+        
     </div>
     <hr class="sidebar-divider">
     <label>Voyageurs :</label>
@@ -47,7 +72,8 @@
     <div class="form-group row">
         <div class="col-sm-3">
             <label for="examplegenre">Adultes (+25)</label>
-            <select name="hf" class="form-control form-control-user" id="examplegenre">
+            <select name="hf" class="form-control form-control-user" id="examplegenre" formControlName="adultes">
+                <option>0</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -58,7 +84,8 @@
         </div>
         <div class="col-sm-3">
             <label for="examplegenre">Jeunes (12-24)</label>
-            <select name="hf" class="form-control form-control-user" id="examplegenre">
+            <select name="hf" class="form-control form-control-user" id="examplegenre" formControlName="jeunes">
+                <option>0</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -69,7 +96,8 @@
         </div>
         <div class="col-sm-3">
             <label for="examplegenre">Enfants (2-11)</label>
-            <select name="hf" class="form-control form-control-user" id="examplegenre">
+            <select name="hf" class="form-control form-control-user" id="examplegenre" formControlName="enfants">
+                <option>0</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -80,7 +108,8 @@
         </div>
         <div class="col-sm-3">
             <label for="examplegenre">Bébés (< 2)</label>
-                    <select name="hf" class="form-control form-control-user" id="examplegenre">
+                    <select name="hf" class="form-control form-control-user" id="examplegenre" formControlName="bebes">
+                        <option>0</option>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -90,27 +119,29 @@
                     </select>
         </div>
     </div>
-    
+
     <hr class="sidebar-divider">
-    <label>Paiment :</label>
+    <label>Paiement :</label>
     <div class="row">
-        
-        
+
+
         <div class="col-sm-6">
-            <input class="rdb" type="radio" name="options" id="option1" autocomplete="off" checked>
-            <label>Carte de crédit</label>
+            <input class="rdb" id="cartecredit" type="radio" autocomplete="off" value="cartecredit" name="carte"
+                formControlName="carte">
+            <label for="cartecredit">Carte credit</label>
         </div>
         <div class="col-sm-6">
-            
-            <input class="rdb" type="radio" name="options" id="option2" autocomplete="off">
-            <label>Carte e-Dinar</label>
+
+            <input class="rdb" id="carteedinar" type="radio" autocomplete="off" value="carteedinar" name="carte"
+                formControlName="carte">
+            <label for="carteedinar">Carte E-dinar</label>
         </div>
     </div>
 
     <div class="row bb">
 
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button type="button" class="b1 btn btn-outline-danger" routerLink="">Rechercher</button>
+            <button type="submit" class="b1 btn btn-outline-danger"[disabled]="reserverForm.invalid">Rechercher</button>
         </div>
 
     </div>

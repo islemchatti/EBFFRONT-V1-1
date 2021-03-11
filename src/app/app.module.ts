@@ -33,6 +33,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { ListeAttenteComponent } from './components/private/admin/gestion-retraites/liste-attente/liste-attente.component';
 import { ListeComponent } from './components/private/admin/gestion-retraites/liste/liste.component';
 import { DashboardAdminComponent } from './components/private/admin/gestion-retraites/dashboard-admin/dashboard-admin.component'
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -55,7 +56,8 @@ import { DashboardAdminComponent } from './components/private/admin/gestion-retr
     Article1Component,
     ListeAttenteComponent,
     ListeComponent,
-    DashboardAdminComponent
+    DashboardAdminComponent,
+    
     
    
     
@@ -78,7 +80,8 @@ import { DashboardAdminComponent } from './components/private/admin/gestion-retr
     MatCardModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
     
 
   ],
