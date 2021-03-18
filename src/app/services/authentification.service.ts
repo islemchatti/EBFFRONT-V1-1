@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,6 +15,14 @@ export class AuthentificationService {
   }
   register(data1): Observable<any>{
     console.log("service register works");
-    return this._http.post('http://127.0.0.1:8000/api/users',data1);
+    return this._http.post('http://127.0.0.1:8000/register',data1);
     }
+
+  loggedIn()
+  {
+    return !!localStorage.getItem('mytoken');
+  }
+
+  getToken(){
+    return localStorage.getItem('mytoken'); }
 }

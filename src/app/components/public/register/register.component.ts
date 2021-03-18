@@ -45,14 +45,12 @@ export class RegisterComponent implements OnInit {
                        console.log(result);
                        console.log("i work");
                        this._router.navigateByUrl('/retraite/dashboard');
+                       localStorage.setItem("mytoken",result.token);
                        console.log("i work2");
                     },
            (error)=>{
-                      console.log(this.loginForm.value);
+                      console.log(error);
                       console.log("i dont work");
-                      
-                      this._router.navigateByUrl('/retraite/dashboard');
-                   
                     }
           )
 
@@ -70,7 +68,8 @@ export class RegisterComponent implements OnInit {
            (result)=>{ 
                        console.log(result);
                        console.log("i work");
-                       this._router.navigateByUrl('/retraite/dashboard');
+                       this._router.navigateByUrl('/registerValidation');
+                       localStorage.setItem("mytoken",result.token);
                        console.log("i work2");
                     },
            (error)=>{

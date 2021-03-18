@@ -11,12 +11,19 @@ import { RegisterComponent } from './components/public/register/register.compone
 import { DashboardAdminComponent } from './components/private/admin/gestion-retraites/dashboard-admin/dashboard-admin.component';
 import { ListeAttenteComponent } from './components/private/admin/gestion-retraites/liste-attente/liste-attente.component';
 import { ListeComponent } from './components/private/admin/gestion-retraites/liste/liste.component';
+import { AuthentificationGuard } from './guards/authentification.guard';
+import { RegisterValidationComponent } from './components/public/register-validation/register-validation.component';
+import { Article1Component } from './components/private/retraite/article/article1/article1.component';
 
 const routes: Routes = [
 
   {
     path:"",
     component:RegisterComponent
+  },
+  {
+    path:"registerValidation",
+    component:RegisterValidationComponent
   },
   {
     path:"register",
@@ -38,10 +45,14 @@ const routes: Routes = [
         path:"actualites",
         component:ActualitesListComponent
       },
-    
+      {
+        path:"article1",
+        component:ArticledashComponent
+      },
       {
         path:"dashboard",
-        component: DashboardComponent
+        component: DashboardComponent,
+        canActivate: [AuthentificationGuard]
       }
     ]
   },

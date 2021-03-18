@@ -11,6 +11,6 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  admin = true;
-  user = false;
+  admin = false;
+  user = true;
 }

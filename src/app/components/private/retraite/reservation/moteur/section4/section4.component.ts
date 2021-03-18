@@ -22,14 +22,14 @@ export class Section4Component implements OnInit {
       "Arrivée estimée": "aa"
     },
     { "": "2",
-      "Numéro du vol": "111",
-      "Escale départ": "aa",
-      "Escale arrivée": "aa",
-      "Etat du vol": "aa",
-      "Départ programmé": "aa",
-      "Arrivée programmée": "aa",
-      "Départ estimé": "aa",
-      "Arrivée estimée": "aa"
+      "Numéro du vol": "222",
+      "Escale départ": "bb",
+      "Escale arrivée": "bb",
+      "Etat du vol": "bb",
+      "Départ programmé": "bb",
+      "Arrivée programmée": "bb",
+      "Départ estimé": "bb",
+      "Arrivée estimée": "bb"
     }
 
   ];

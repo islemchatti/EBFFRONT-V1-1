@@ -33,7 +33,15 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { ListeAttenteComponent } from './components/private/admin/gestion-retraites/liste-attente/liste-attente.component';
 import { ListeComponent } from './components/private/admin/gestion-retraites/liste/liste.component';
 import { DashboardAdminComponent } from './components/private/admin/gestion-retraites/dashboard-admin/dashboard-admin.component'
-import { HttpClientModule } from '@angular/common/http';
+
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthentificationService } from './services/authentification.service';
+import { AuthentificationGuard } from './guards/authentification.guard';
+import { ArticleService } from './services/article.service';
+import { TokenInterceptorService } from './services/token-interceptor.service';
+import { CarouselComponent } from './components/private/shared/carousel/carousel.component';
+import { RegisterValidationComponent } from './components/public/register-validation/register-validation.component';
+
 
 
 
@@ -57,6 +65,9 @@ import { HttpClientModule } from '@angular/common/http';
     ListeAttenteComponent,
     ListeComponent,
     DashboardAdminComponent,
+    CarouselComponent,
+    RegisterValidationComponent,
+    
     
     
    
@@ -83,9 +94,18 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
     
+    
+    
 
   ],
-  providers: [],
+  
+  providers: [AuthentificationService, AuthentificationGuard, ArticleService, 
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true,
+  }],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

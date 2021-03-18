@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "EBFFRONT"
+  "defaultProject": "EBFFRONT",
+  "cli": {
+    "analytics": false
+  }
 }
