@@ -8,15 +8,16 @@ import { AuthentificationService } from 'src/app/services/authentification.servi
 export class AuthentificationGuard implements CanActivate {
   constructor(public authservice:AuthentificationService,private _router:Router) { } 
   canActivate(): boolean{
-     if (this.authservice.loggedIn())
-     {
-       return true;
-     }
-     else 
-     {
-       this._router.navigate(['/register']);
-       return false;
-     }
+    if(this.authservice.isLogged())
+    {
+      return true;
+     
+    
+    }
+    else{
+      this._router.navigateByUrl('/register');
+      return false;
+    }
   }
   
 }

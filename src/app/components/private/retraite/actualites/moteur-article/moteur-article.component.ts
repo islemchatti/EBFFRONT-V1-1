@@ -27,7 +27,13 @@ export class MoteurArticleComponent implements OnInit {
     
   }
   
-  
+  voirplus(id){
+    
+    localStorage.setItem("idarticle",id)
+    this._router.navigateByUrl('/retraite/article');
+    console.log("voiir pluuuuuuuuuuuus");
+
+  }
 
 
 

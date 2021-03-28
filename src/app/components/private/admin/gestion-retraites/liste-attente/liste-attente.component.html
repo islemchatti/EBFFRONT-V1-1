@@ -1,22 +1,48 @@
-<table class="table table-bordered">
+<table class="table table-bordered table-responsive">
     <th *ngFor="let column of headers">
         {{column}}
     </th>
     <th>
-       #
+        Activé(e)
     </th>
-    <tr *ngFor="let vol of vols">
-        <td *ngFor="let column of headers">
-            {{vol[column]}}
+
+    <tr *ngFor="let retraite of retraites; let f=index">
+        <td>
+            {{f+1}}
         </td>
         <td>
-            <button class="btn btn-info btn-sm b1">  
+            {{retraite.matricule}}
+        </td>
+        <td>
+            {{retraite.nom}}
+        </td>
+        <td>
+            {{retraite.prenom}}
+        </td>
+
+        <td>
+            {{retraite.email}}
+        </td>
+        <td>
+            {{retraite.cin}}
+        </td>
+        <td>
+            {{retraite.cnss}}
+        </td>
+        <td>
+            {{retraite.adresse}}
+        </td>
+        <td>
+            {{retraite.tel}}
+        </td>
+        <td>
+            <button class="btn btn-info btn-sm b1 " (click)="valider(retraite)">
                 <i class="fas fa-user-check"></i>
             </button>
-                <button class="btn btn-danger btn-sm "> 
-                    <i class="fas fa-user-slash"></i>
+            <button class="btn btn-danger btn-sm " (click)="delete(retraite)">
+                <i class="fas fa-user-slash"></i>
             </button>
-   
+
         </td>
     </tr>
 </table>

@@ -16,6 +16,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatSelectModule} from '@angular/material/select';
 import { ActualitesListComponent } from './components/private/retraite/actualites/actualites-list/actualites-list.component';
 import { NavbarComponent } from './components/private/shared/navbar/navbar.component';
 import { SidebarComponent } from './components/private/shared/sidebar/sidebar.component';
@@ -38,9 +39,20 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthentificationService } from './services/authentification.service';
 import { AuthentificationGuard } from './guards/authentification.guard';
 import { ArticleService } from './services/article.service';
-import { TokenInterceptorService } from './services/token-interceptor.service';
 import { CarouselComponent } from './components/private/shared/carousel/carousel.component';
 import { RegisterValidationComponent } from './components/public/register-validation/register-validation.component';
+import { UpdateRetraiteComponent } from './components/private/admin/gestion-retraites/update-retraite/update-retraite.component';
+import { Page404Component } from './components/public/page404/page404.component';
+import { TokenInterceptorService } from './token-interceptor.service';
+import { AddReclamComponent } from './components/private/retraite/reclam-retraite/add-reclam/add-reclam.component';
+import { UpdateReclamComponent } from './components/private/retraite/reclam-retraite/update-reclam/update-reclam.component';
+import { RepTraiteReclamComponent } from './components/private/retraite/reclam-retraite/rep-traite-reclam/rep-traite-reclam.component';
+import { RepNontraiteReclamComponent } from './components/private/retraite/reclam-retraite/rep-nontraite-reclam/rep-nontraite-reclam.component';
+import { DashboardReclamComponent } from './components/private/retraite/reclam-retraite/dashboard-reclam/dashboard-reclam.component';
+import { ListeReclamAttenteComponent } from './components/private/admin/gestion-reclam/liste-reclam-attente/liste-reclam-attente.component';
+import { ListeReclamComponent } from './components/private/admin/gestion-reclam/liste-reclam/liste-reclam.component';
+import { ContenuReclamComponent } from './components/private/admin/gestion-reclam/contenu-reclam/contenu-reclam.component';
+import { ReponseReclamComponent } from './components/private/admin/gestion-reclam/reponse-reclam/reponse-reclam.component';
 
 
 
@@ -67,12 +79,18 @@ import { RegisterValidationComponent } from './components/public/register-valida
     DashboardAdminComponent,
     CarouselComponent,
     RegisterValidationComponent,
-    
-    
-    
-   
-    
-    
+    UpdateRetraiteComponent,
+    Page404Component,
+    AddReclamComponent,
+    UpdateReclamComponent,
+    RepTraiteReclamComponent,
+    RepNontraiteReclamComponent,
+    DashboardReclamComponent,
+    ListeReclamAttenteComponent,
+    ListeReclamComponent,
+    ContenuReclamComponent,
+    ReponseReclamComponent
+ 
   ],
   imports: [
     BrowserModule,
@@ -89,22 +107,19 @@ import { RegisterValidationComponent } from './components/public/register-valida
     MatInputModule,
     MatListModule,
     MatCardModule,
+    MatSelectModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
-    
-    
-    
-
   ],
   
   providers: [AuthentificationService, AuthentificationGuard, ArticleService, 
-  {
-    provide: HTTP_INTERCEPTORS,
-    useClass: TokenInterceptorService,
-    multi: true,
-  }],
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true,
+    }],
 
   bootstrap: [AppComponent]
 })

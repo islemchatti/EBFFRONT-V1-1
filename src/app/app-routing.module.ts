@@ -14,6 +14,20 @@ import { ListeComponent } from './components/private/admin/gestion-retraites/lis
 import { AuthentificationGuard } from './guards/authentification.guard';
 import { RegisterValidationComponent } from './components/public/register-validation/register-validation.component';
 import { Article1Component } from './components/private/retraite/article/article1/article1.component';
+import { UpdateRetraiteComponent } from './components/private/admin/gestion-retraites/update-retraite/update-retraite.component';
+import { Page404Component } from './components/public/page404/page404.component';
+import { RetraiteGuard } from './guards/retraite.guard';
+import { AdminGuard } from './guards/admin.guard';
+import { DashboardReclamComponent } from './components/private/retraite/reclam-retraite/dashboard-reclam/dashboard-reclam.component';
+import { AddReclamComponent } from './components/private/retraite/reclam-retraite/add-reclam/add-reclam.component';
+import { RepNontraiteReclamComponent } from './components/private/retraite/reclam-retraite/rep-nontraite-reclam/rep-nontraite-reclam.component';
+import { UpdateReclamComponent } from './components/private/retraite/reclam-retraite/update-reclam/update-reclam.component';
+import { RepTraiteReclamComponent } from './components/private/retraite/reclam-retraite/rep-traite-reclam/rep-traite-reclam.component';
+import { ListeReclamAttenteComponent } from './components/private/admin/gestion-reclam/liste-reclam-attente/liste-reclam-attente.component';
+import { ListeReclamComponent } from './components/private/admin/gestion-reclam/liste-reclam/liste-reclam.component';
+import { ContenuReclamComponent } from './components/private/admin/gestion-reclam/contenu-reclam/contenu-reclam.component';
+import { ReponseReclamComponent } from './components/private/admin/gestion-reclam/reponse-reclam/reponse-reclam.component';
+
 
 const routes: Routes = [
 
@@ -30,15 +44,8 @@ const routes: Routes = [
     component:RegisterComponent
   },
   {
-    path:"section1",
-    component:Section1Component
-  },
-  {
-    path:"article",
-    component: ArticledashComponent
-  },
-  {
     path:"retraite",
+    canActivateChild : [RetraiteGuard],
     children:
     [
       {
@@ -46,18 +53,38 @@ const routes: Routes = [
         component:ActualitesListComponent
       },
       {
-        path:"article1",
+        path:"article",
         component:ArticledashComponent
       },
       {
         path:"dashboard",
-        component: DashboardComponent,
-        canActivate: [AuthentificationGuard]
-      }
+        component: DashboardComponent
+      },
+      {
+        path:"reclamation",
+        component: DashboardReclamComponent
+      },
+      {
+        path:"add-reclam",
+        component: AddReclamComponent
+      },
+      {
+        path:"rep-nontraite-reclam",
+        component: RepNontraiteReclamComponent
+      },
+      {
+        path:"rep-traite-reclam",
+        component: RepTraiteReclamComponent
+      },
+      {
+        path:"update-reclam",
+        component: UpdateReclamComponent
+      },
     ]
   },
   {
     path:"admin",
+    canActivateChild :[AdminGuard],
     children:
     [
       {
@@ -65,15 +92,36 @@ const routes: Routes = [
         component:DashboardAdminComponent
       },
       {
-        path:"liste-attente",
-        component:ListeAttenteComponent,
-      },
-      {
         path:"liste",
         component:ListeComponent,
       },
+      {
+        path:"update",
+        component:UpdateRetraiteComponent,
+      },
+      {
+        path:"liste-reclam-attente",
+        component:ListeReclamAttenteComponent
+      },
+      {
+        path:"liste-reclam",
+        component:ListeReclamComponent
+      },
+      {
+        path:"contenu-reclam",
+        component:ContenuReclamComponent
+      },
+      {
+        path:"reponse-reclam",
+        component:ReponseReclamComponent
+      }
     ]
   },
+  /*page404*/
+  {
+    path:"**",
+    component:Page404Component
+  }
 ]
 
 @NgModule({

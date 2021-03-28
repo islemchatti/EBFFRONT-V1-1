@@ -29,32 +29,68 @@
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h3 class="m-0 font-weight-bold text-primary l1">Liste des retraités</h3>
+                                <i class="fas fa-search fa-sm i1"></i>
+                                <input type="text" id="recherche" (input)="recherche($event.target.value)">
 
                             </div>
                             <!-- Card Body -->
                             <div class="card-body">
                                 <!-- ICIIIIIIIII -->
-                                <table class="table table-bordered">
+                                
+                                <table class="table table-bordered table-responsive">
                                     <th *ngFor="let column of headers">
                                         {{column}}
                                     </th>
                                     <th>
                                         Activé(e)
                                     </th>
-                                    <tr *ngFor="let vol of vols">
-                                        <td *ngFor="let column of headers">
-                                            {{vol[column]}}
+                                    
+                                    <tr *ngFor="let retraite of retraites; let f=index">
+                                        <td >
+                                            {{f+1}}
                                         </td>
-                                        <td>
-                                            <div class="form-check">
+                                        <td >
+                                            {{retraite.matricule}}
+                                        </td> 
+                                        <td >
+                                            {{retraite.nom}}
+                                        </td>
+                                        <td >
+                                            {{retraite.prenom}}
+                                        </td>
+                                        
+                                        <td >
+                                            {{retraite.email}}
+                                        </td>
+                                        <td >
+                                            {{retraite.cin}}
+                                        </td>
+                                        <td >
+                                            {{retraite.cnss}}
+                                        </td>
+                                        <td >
+                                            {{retraite.adresse}}
+                                        </td>
+                                        <td >
+                                            {{retraite.tel}}
+                                        </td>
+                                        <td > 
+                                            <div class="form-check"  >
                                                 <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDefault" [checked]="true">
-
-
-
+                                                    id="flexCheckDefault" [checked]=checkrets[f] (click)="activate(retraite)">
                                             </div>
 
                                         </td>
+                                        <td>
+                                            <button (click)="update(retraite)" class="btn btn-info btn-sm b1">
+                                                <i class="fas fa-pen"></i>
+                                                
+                                            </button>
+                                            <button (click)="delete(retraite)" class="btn btn-danger btn-sm ">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </td>
+
                                     </tr>
                                 </table>
 
@@ -62,7 +98,7 @@
                         </div>
                     </div>
 
-                    
+
 
                 </div>
 

@@ -84,14 +84,24 @@
     <hr *ngIf="admin" class="sidebar-divider">
 
     <li *ngIf="admin" class="nav-item">
-        <a class="nav-link" [routerLink]="['/']">
-            <i class="far fa-newspaper"></i>
-            <span class="dashicons1">Gestion des articles</span>
+        <a class="nav-link" [routerLink]="['/admin/liste-reclam-attente']">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span class="dashicons1">Gestion des réclamations</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
             data-parent="#accordionSidebar">
         </div>
     </li>
+      <!-- Divider -->
+      <hr *ngIf="user" class="sidebar-divider">
+
+
+      <li *ngIf="user" class="nav-item">
+          <a class="nav-link" [routerLink]="['/retraite/reclamation']">
+            <i class="fas fa-exclamation-triangle"></i>
+              <span class="dashicons1">Réclamations</span>
+          </a>
+      </li>
     <!-- Divider -->
     <hr *ngIf="admin" class="sidebar-divider">
 

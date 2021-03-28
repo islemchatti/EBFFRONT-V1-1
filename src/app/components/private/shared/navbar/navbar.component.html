@@ -10,7 +10,7 @@
     </div>
     
     <marquee direction="right" class="Bienvenue">
-        <h4>Bienvenue Mme Nebli</h4>
+        <h4>Bienvenue {{noun}}</h4>
     </marquee>
 
 
@@ -57,7 +57,7 @@
                 </a>
 
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" (click)="Logout()" href="#" data-toggle="modal" data-target="#logoutModal">
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                     Se déconnecter
                 </a>

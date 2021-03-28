@@ -4,7 +4,7 @@
   </div>
   <mat-card class="mat-elevation-z12">
     <mat-tab-group color="warn" mat-stretch-tabs class="example-stretched-tabs">
-      
+
       <mat-tab label="Se connecter">
         <mat-card-content>
           <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
@@ -14,7 +14,7 @@
               <mat-icon matSuffix>account_circle</mat-icon>
             </mat-form-field>
             <mat-form-field color="warn" class="fieeeeld">
-              <input matInput placeholder="Mot de passe" type="password" required minlength="2" name="password" formControlName="password">
+              <input matInput placeholder="Mot de passe" type="password" name="password" formControlName="password">
               <mat-error *ngIf="password.errors && password.errors.required">
                 Mot de passe requis
               </mat-error>
@@ -23,76 +23,88 @@
               </mat-error>
               <mat-icon matSuffix>lock</mat-icon>
             </mat-form-field>
-            <mat-checkbox color="warn" >Enregistrer vos identifiants ?</mat-checkbox>
-            <button type="submit" mat-raised-button color="warn" class="login-button" >
+            <mat-checkbox color="warn">Enregistrer vos identifiants ?</mat-checkbox>
+            <button type="submit" mat-raised-button color="warn" class="login-button">
               Se connecter
             </button>
           </form>
         </mat-card-content>
       </mat-tab>
       <mat-tab label="S'inscrire">
-        
+
         <mat-card-content>
           <form [formGroup]="registerForm" (ngSubmit)="registerUser()">
             <div class="row">
               <div class="col-md-6">
-                <mat-form-field color="warn" >
+                <mat-form-field color="warn">
                   <input matInput placeholder="Matricule" required name="matricule" formControlName="matricule">
                   <mat-icon matSuffix>approval</mat-icon>
-                  <mat-error *ngIf="matricule.invalid">Matricule requise</mat-error>
+                  <mat-error *ngIf="matricule.errors && matricule.errors.required">Matricule requise</mat-error>
+                  <mat-error *ngIf="matricule.errors && matricule.errors.minlength">Matricule invalide</mat-error>
+                  <mat-error *ngIf="matricule.errors && matricule.errors.maxlength">Matricule invalide</mat-error>
                 </mat-form-field>
               </div>
               <div class="col-md-6">
-                <mat-form-field color="warn" >
+                <mat-form-field color="warn">
                   <input matInput placeholder="CIN" required name="cin" formControlName="cin">
-                  <mat-error *ngIf="cin.invalid">Numéro de CIN requis</mat-error>
+                  <mat-error *ngIf="cin.errors && cin.errors.required">CIN requise</mat-error>
+                  <mat-error *ngIf="cin.errors && cin.errors.minlength">CIN invalide</mat-error>
+                  <mat-error *ngIf="cin.errors && cin.errors.maxlength">CIN invalide</mat-error>
                   <mat-icon matSuffix>credit_card</mat-icon>
                 </mat-form-field>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6">
-                <mat-form-field color="warn" >
+                <mat-form-field color="warn">
                   <input matInput placeholder="Nom " required name="nom" formControlName="nom">
                   <mat-icon matSuffix>perm_identity</mat-icon>
-                  <mat-error *ngIf="nom.invalid">Nom requis</mat-error>
+                  <mat-error *ngIf="nom.errors && nom.errors.required">Nom requis</mat-error>
+                  <mat-error *ngIf="nom.errors && nom.errors.pattern">Nom invalide</mat-error>
                 </mat-form-field>
               </div>
               <div class="col-md-6">
-                <mat-form-field color="warn" >
+                <mat-form-field color="warn">
                   <input matInput placeholder="Prénom" required name="prenom" formControlName="prenom">
                   <mat-icon matSuffix>perm_identity</mat-icon>
-                  <mat-error *ngIf="prenom.invalid">Prénom requis</mat-error>
+                  <mat-error *ngIf="prenom.errors && prenom.errors.required">Prénom requis</mat-error>
+                  <mat-error *ngIf="prenom.errors && prenom.errors.pattern">Prénom invalide</mat-error>
                 </mat-form-field>
               </div>
             </div>
 
             <div class="row">
               <div class="col-md-6">
-                <mat-form-field color="warn" >
+                <mat-form-field color="warn">
                   <input matInput placeholder="Adresse e-mail" required name="email" formControlName="email">
-                  <mat-error *ngIf="email.invalid">Adresse e-mail requise</mat-error>
+                  <mat-error *ngIf="email.errors && email.errors.required">Adresse mail requise</mat-error>
+                  <mat-error *ngIf="email.errors && email.errors.email">Adresse mail invalide</mat-error>
                   <mat-icon matSuffix>email</mat-icon>
                 </mat-form-field>
               </div>
               <div class="col-md-6">
-                <mat-form-field color="warn" >
+                <mat-form-field color="warn">
                   <input matInput placeholder="Tél" required name="tel" formControlName="tel">
-                  <mat-error *ngIf="tel.invalid">Numéro de téléphone requis</mat-error>
+                  <mat-error *ngIf="tel.errors && tel.errors.required">Numéro de téléphone requis</mat-error>
+                  <mat-error *ngIf="tel.errors && tel.errors.minlength">Numéro de téléphone invalide</mat-error>
+                  <mat-error *ngIf="tel.errors && tel.errors.maxlength">Numéro de téléphone invalide</mat-error>
                   <mat-icon matSuffix>settings_phone</mat-icon>
                 </mat-form-field>
               </div>
             </div>
 
-            <mat-form-field color="warn" >
+            <mat-form-field color="warn">
               <input matInput placeholder="Numéro de CNSS" required name="cnss" formControlName="cnss">
-              <mat-error *ngIf="cnss.invalid">Numéro de CNSS requis</mat-error>
+              <mat-error *ngIf="cnss.errors && cnss.errors.required">Numéro de CNSS requis</mat-error>
+              <mat-error *ngIf="cnss.errors && cnss.errors.minlength">Numéro de CNSS invalide</mat-error>
+              <mat-error *ngIf="cnss.errors && cnss.errors.maxlength">Numéro de CNSS invalide</mat-error>
               <mat-icon matSuffix>subtitles</mat-icon>
             </mat-form-field>
 
-            <mat-form-field color="warn" >
+            <mat-form-field color="warn">
               <input matInput placeholder="Adresse" required name="adresse" formControlName="adresse">
-              <mat-error *ngIf="adresse.invalid">Adresse requis</mat-error>
+              <mat-error *ngIf="adresse.errors && adresse.errors.required">Adresse requise</mat-error>
+              <mat-error *ngIf="adresse.errors && adresse.errors.pattern">Adresse invalide</mat-error>
               <mat-icon matSuffix>room</mat-icon>
             </mat-form-field>
 
