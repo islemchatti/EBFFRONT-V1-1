@@ -20,52 +20,48 @@
 
                 <!-- Content Row -->
 
-
                 <div class="row">
 
                     <!-- Area Chart -->
                     <div class="col-xl-12 col-lg-12">
-                        <div class="card text-center col-xl-5 col-lg-5 verif">
-                            <div class="card-header">
-                               
-                                <button type="submit" class="btn btn-outline-danger b2" routerLink="/retraite/reclamation">
-                                    <i class="fas fa-house-user"></i>
-                                </button>
-                                
+                        <div class="card shadow mb-4 ">
+                            <!-- Card Header - Dropdown -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h3 class="m-0 font-weight-bold text-primary l1">Réclamation</h3>
+
                             </div>
+                            <!-- Card Body -->
                             <div class="card-body">
-
-                                <p class="card-text">Votre réclamation n'est pas encore traitée.
-                                    <br>
-                                    <br>
-                                    Voulez-vous la supprimer ?
-                                </p>
+                                <!-- ICIIIIIIIII -->
+                                <h2>Référence : {{reclam.reference}} </h2>
+                                <h2>Objet : </h2>
+                                <h3>{{reclam.object}}</h3>
+                                <h2>Contenu :</h2>
+                                <h3>
+                                    {{reclam.contenu}}
+                                </h3>
+                                <div class="card-footer text-muted">
+                                    <div class="row">
+                                        <p  class="card-text col-9">Votre réclamation n'est pas encore traitée. Voulez-vous la supprimer ? 
+                                            <button type="submit" class="btn btn-danger b1"
+                                            (click)="deleteReclam()">Supprimer</button>
+                                        </p>
+                                        
+                                    </div>
+                                    
+                                </div>
 
                             </div>
-
-                            <div class="card-footer text-muted">
-                                <button type="submit" class="btn btn-danger"
-                                    (click)="deleteReclam()">Supprimer</button>
-                            </div>
-                            
-
                         </div>
                     </div>
 
 
 
                 </div>
+            
 
 
-                <!-- Footer -->
-                <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Tunisair 2021</span>
-                        </div>
-                    </div>
-                </footer>
-                <!-- End of Footer -->
+               
 
             </div>
             <!-- End of DASHBOAAARD -->

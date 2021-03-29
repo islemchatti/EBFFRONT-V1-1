@@ -20,18 +20,14 @@ export class AddReclamComponent implements OnInit {
   initform() {
     this.AddReclam = new FormGroup({
       object: new FormControl("", [Validators.required,]),
-      contenu: new FormControl("", [Validators.required]),
-      pieces_jointes_ret: new FormControl(this.uploadfile),
+      contenu: new FormControl("", [Validators.required])
     });
   }
   get object() { return this.AddReclam.get('object') }
   get contenu() { return this.AddReclam.get('contenu') }
   addReclam() {
 
-    const data = new FormData();
-    data.append('uploadfile', this.uploadfile);
-    data.append('form', this.AddReclam.value);
-    this.reclamservice.createReclam(localStorage.getItem("ID"), data).subscribe(
+    this.reclamservice.createReclam(localStorage.getItem("ID"),this.AddReclam.value ).subscribe(
       (result) => {
         console.log(result);
         this._router.navigateByUrl('/retraite/reclamation');

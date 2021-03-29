@@ -27,7 +27,7 @@ export class MoteurArticleComponent implements OnInit {
     
   }
   
-  voirplus(id){
+  LirePlus(id){
     
     localStorage.setItem("idarticle",id)
     this._router.navigateByUrl('/retraite/article');

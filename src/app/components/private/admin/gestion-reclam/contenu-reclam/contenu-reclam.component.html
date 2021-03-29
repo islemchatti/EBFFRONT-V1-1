@@ -35,25 +35,30 @@
                             <div class="card-body">
                                 <!-- ICIIIIIIIII -->
                                 <div class="row">
-                                    <div class="col-6">
-                                        <h2>Matricule : </h2>
-                                        <h2> 232525</h2>
+                                    <div class="col-4">
+                                        <h2>Référence : {{reclam.reference}} </h2>
                                     </div>
-                                    <div class="col-6">
-                                        <h2>Nom et prénom : </h2>
-                                        <h2> Zoghlami Ridha</h2>
+                                    <div class="col-4">
+                                        <h2>Matricule : {{reclam.matricule_ret}} </h2>
+                                    </div>
+                                    <div class="col-4">
+                                        <h2>Nom et prénom :  {{nom}}</h2>
                                     </div>
                                 </div>
-                                <h1>Objet : </h1>
-                                <h3>[ Réclamation billets non trouvés ]</h3>
-                                <h1>Contenu :</h1>
+                                <hr>
+                                <h2>Objet : </h2>
+                                <h3>{{reclam.object}}</h3>
+                                <h2>Contenu :</h2>
                                 <h3>
-                                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                                    {{reclam.contenu}}
+                                </h3>
+                                <h1>Réponse :</h1>
+                                <h3>
+                                    {{reclam.contenu_admin}}
                                 </h3>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                     <button type="button" class="b1 btn btn-outline-danger"
-                                        routerLink="/admin/reponse-reclam">Répondre</button>
+                                        routerLink="/admin/liste-reclam">Retour</button>
                                 </div>
 
                             </div>

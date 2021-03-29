@@ -27,6 +27,7 @@ import { ListeReclamAttenteComponent } from './components/private/admin/gestion-
 import { ListeReclamComponent } from './components/private/admin/gestion-reclam/liste-reclam/liste-reclam.component';
 import { ContenuReclamComponent } from './components/private/admin/gestion-reclam/contenu-reclam/contenu-reclam.component';
 import { ReponseReclamComponent } from './components/private/admin/gestion-reclam/reponse-reclam/reponse-reclam.component';
+import { Moteur2Component } from './components/private/retraite/reservation/moteur2/moteur2.component';
 
 
 const routes: Routes = [
@@ -60,6 +61,15 @@ const routes: Routes = [
         path:"dashboard",
         component: DashboardComponent
       },
+      {
+        path:"moteur",
+        component: MoteurComponent
+      },
+      {
+        path:"moteur2",
+        component: Moteur2Component
+      },
+
       {
         path:"reclamation",
         component: DashboardReclamComponent

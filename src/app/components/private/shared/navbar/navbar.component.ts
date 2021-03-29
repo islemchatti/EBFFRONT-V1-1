@@ -19,6 +19,7 @@ this.getnoun();
     localStorage.removeItem("mytoken");
     localStorage.removeItem("ID");
     localStorage.removeItem("idreclam");
+    localStorage.removeItem("idarticle");
     this.router.navigateByUrl('/register');
   }
   getnoun() {

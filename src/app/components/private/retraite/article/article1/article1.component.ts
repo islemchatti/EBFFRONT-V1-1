@@ -21,6 +21,7 @@ export class Article1Component implements OnInit {
   getarticle(id){
     this.service.getArticle(id).subscribe(
       (result)=>{ 
+        console.log("wooooooooooork2");
                   console.log(result);
                   this.article = result as Article;
                },

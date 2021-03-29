@@ -15,6 +15,7 @@ export class RetraiteService {
   public AllRetraitesURL=this.baseURL+"users";
   public DeleteRetraitesURL=this.baseURL+"users/"; 
   public getRetraitesURL=this.baseURL+"users/"; 
+  public getRetraitesMatURL=this.baseURL+"users/mat/"; 
   public ActivateRetraitesURL=this.baseURL+"users/activate/";
   public DesactivateRetraitesURL=this.baseURL+"users/desactivate/";
   public UpdateRetraitesURL=this.baseURL+"users/";
@@ -28,6 +29,10 @@ export class RetraiteService {
   }
   getRetraite(id){
     let dataFormaAPI = this.http.get<Retraite>(this.getRetraitesURL + id)
+    return dataFormaAPI
+  }
+  getRetraiteMat(mat){
+    let dataFormaAPI = this.http.get<Retraite>(this.getRetraitesMatURL + mat)
     return dataFormaAPI
   }
   

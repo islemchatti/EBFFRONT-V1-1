@@ -33,32 +33,35 @@
                             </div>
                             <!-- Card Body -->
                             <div class="card-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h2>Matricule : {{reclam.matricule_ret}} </h2>
+                                    </div>
+                                    <div class="col-6">
+                                        <h2>Nom et prénom :  {{nom}}</h2>
+                                    </div>
+                                </div>
+                                <h2>Objet : </h2>
+                                <h3>{{reclam.object}}</h3>
+                                <h2>Contenu :</h2>
+                                <h3>
+                                    {{reclam.contenu}}
+                                </h3>
                                 <!-- ICIIIIIIIII -->
                                 <div class="row">
-                                    <div class="col-lg-5 d-none d-lg-block userreclam"> </div>
+                                    
                                     <div class="col-lg-7">
                                         <form [formGroup]="ReponseReclam" (ngSubmit)="repondre()"class="user">
                                             <div class="row">
                                                 <div class="col-sm-9 m2">
                                                     <div class="form-floating">
-                                                        <label for="floatingTextarea" >Objet</label>
-                                                        <textarea class="form-control"
-                                                            placeholder="Entrez l'objet de votre réclamation" id="floatingTextarea"
-                                                            style="height: 40px"formControlName="object"></textarea>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-9 m2">
-                                                    <div class="form-floating">
-                                                        <label for="floatingTextarea2" class="lab1">Contenu</label>
-                                                        <textarea class="form-control" placeholder="Entrez le contenu de votre réclamation"
+                                                        <label for="floatingTextarea2" class="lab1"><h2>Réponse</h2></label>
+                                                        <textarea class="form-control" placeholder="Entrez le contenu de votre réponse"
                                                             id="floatingTextarea2" style="height: 200px"formControlName="contenu_admin"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                            <div class="col-sm-9 m2 btnn">
                                                 <button type="submit" class="b1 btn btn-outline-danger">Envoyer</button>
                                             </div>
                                         </form>

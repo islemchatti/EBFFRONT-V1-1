@@ -1,0 +1,15 @@
+<table class="table table-bordered-responsive">
+    <th *ngFor="let column of headers">
+        {{column}}
+    </th>
+    <tr *ngFor="let membre of membres">
+        <td *ngFor="let column of headers">
+            {{membre[column]}}
+        </td>
+        <td>
+            <button class="btn btn-info btn-sm b1" routerLink="/retraite/moteur2">  
+                Voir détails
+            </button>
+        </td>
+    </tr>
+</table>

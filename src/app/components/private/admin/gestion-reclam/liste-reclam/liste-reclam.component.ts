@@ -11,6 +11,7 @@ export class ListeReclamComponent implements OnInit {
   constructor(private reclamService: ReclamationService) { }
   headers = ["Référence", "Date d'envoi","Matricule", "Objet","Date de réponse"];
   reclamations = []
+  public Allreclams: any[] = [];
   ngOnInit(): void {
     this.getAllReclam();
   }
@@ -20,6 +21,7 @@ export class ListeReclamComponent implements OnInit {
       (result) => {
 
         this.reclamations = result;
+        this.Allreclams = result;
 
         console.log(this.reclamations)
 
@@ -32,5 +34,15 @@ export class ListeReclamComponent implements OnInit {
   getreclalmId(id) {
     localStorage.setItem("idreclam", id);
     
+  }
+  recherche(value) {
+  
+    this.reclamations = this.Allreclams.filter(r => {
+      return (
+        r.matricule_ret.includes(value) ||
+        r.reference.includes(value) 
+      )
+    }
+    )
   }
 }

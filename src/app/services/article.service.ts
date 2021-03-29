@@ -23,7 +23,7 @@ export class ArticleService {
  
   getArticle(id): Observable<any>{
     console.log("service getListArticle works");
-    return this._http.get<Article[]>('http://127.0.0.1:8000/api/articles/list/'+{id});
+    return this._http.get<Article[]>('http://127.0.0.1:8000/api/articles/'+id);
   }
   getArticlesCarousel(): Observable<any> {
     console.log("service getListArticles carousel works");

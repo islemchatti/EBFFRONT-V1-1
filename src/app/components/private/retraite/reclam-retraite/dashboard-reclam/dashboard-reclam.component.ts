@@ -12,7 +12,7 @@ export class DashboardReclamComponent implements OnInit {
   headers = ["Référence", "Date de création", "Objet"];
   reclamations = [];
   reclam;
-  constructor(private router: Router, private reclamService: ReclamationService,) { }
+  constructor(private router: Router, private reclamService: ReclamationService) { }
 
   ngOnInit(): void {
     this.getAllReclam()
@@ -35,12 +35,12 @@ export class DashboardReclamComponent implements OnInit {
   suivi(id){
     this.reclamService.getReclam(id).subscribe(
       (result) => {
-        
-        this.reclam = result ;
+         this.reclam = result ;
         if(this.reclam.Matricule_admin!=null || this.reclam.contenu_admin!=null)
         {
           this.router.navigateByUrl('/retraite/rep-traite-reclam');
           console.log(this.reclam)
+          localStorage.setItem("idreclam",id) 
         }
         else{
           this.router.navigateByUrl('/retraite/rep-nontraite-reclam');

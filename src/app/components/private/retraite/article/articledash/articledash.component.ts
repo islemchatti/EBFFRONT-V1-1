@@ -14,22 +14,8 @@ export class ArticledashComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.id=Number(localStorage.getItem("idarticle"))
-    this.getarticle(this.id)
+    
   }
-  getarticle(id){
-    this.service.getArticle(id).subscribe(
-      (result)=>{ 
-        console.log("wooooooooooork2");
-                  console.log(result);
-                  this.article = result as Article;
-               },
-      (error)=>{
-                 console.log(error);
-                 
-                 console.log("i dont work");
-               }
-     ) 
-  }
+ 
 
 }

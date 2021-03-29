@@ -50,4 +50,5 @@ export class ReclamationService {
   let dataFormaAPI= this.http.put(this.RepondreReclamnURL+id,data1);
   return dataFormaAPI
 }
+
 }
