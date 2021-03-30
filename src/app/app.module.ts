@@ -55,6 +55,7 @@ import { ContenuReclamComponent } from './components/private/admin/gestion-recla
 import { ReponseReclamComponent } from './components/private/admin/gestion-reclam/reponse-reclam/reponse-reclam.component';
 import { Moteur1Component } from './components/private/retraite/reservation/moteur1/moteur1.component';
 import { Moteur2Component } from './components/private/retraite/reservation/moteur2/moteur2.component';
+import { ProfilComponent } from './components/private/retraite/profil/profil.component';
 
 
 
@@ -93,7 +94,8 @@ import { Moteur2Component } from './components/private/retraite/reservation/mote
     ContenuReclamComponent,
     ReponseReclamComponent,
     Moteur1Component,
-    Moteur2Component
+    Moteur2Component,
+    ProfilComponent
  
   ],
   imports: [

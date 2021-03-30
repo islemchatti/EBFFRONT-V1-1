@@ -29,9 +29,6 @@
             <i class="fas fa-plane-departure"></i>
             <span class="dashicons1">Billets de faveur</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-
-        </div>
     </li>
     <!-- Divider -->
     <hr *ngIf="user" class="sidebar-divider">
@@ -41,8 +38,7 @@
             <i class="far fa-newspaper"></i>
             <span class="dashicons1">Actualités</span>
         </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-            data-parent="#accordionSidebar">
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
         </div>
     </li>
     <!-- Divider -->
@@ -70,38 +66,47 @@
     <!-- Divider -->
     <hr *ngIf="admin" class="sidebar-divider d-none d-md-block">
 
-     <!-- Admin -->
-     <li *ngIf="admin" class="nav-item">
-        <a class="nav-link" [routerLink]="['/admin/dashboard']">
+    <!-- Admin -->
+    <li *ngIf="admin" class="nav-item">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+            aria-controls="collapseTwo">
             <i class="fas fa-user-friends"></i>
-            <span class="dashicons1">Gestion des retraités</span>
+            <span class="dashicons1">Retraités</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-
+        <div  id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" [routerLink]="['/admin/dashboard']">Retraités en attente</a>
+                <a class="collapse-item" [routerLink]="['/admin/liste']">Retraités approuvés</a>
+            </div>
         </div>
+
     </li>
     <!-- Divider -->
     <hr *ngIf="admin" class="sidebar-divider">
 
     <li *ngIf="admin" class="nav-item">
-        <a class="nav-link" [routerLink]="['/admin/liste-reclam-attente']">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true"
+        aria-controls="collapseUtilities">
             <i class="fas fa-exclamation-triangle"></i>
-            <span class="dashicons1">Gestion des réclamations</span>
+            <span class="dashicons1">Réclamations</span>
         </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-            data-parent="#accordionSidebar">
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" [routerLink]="['/admin/liste-reclam-attente']">Réclamations en attente</a>
+                <a class="collapse-item" [routerLink]="['/admin/liste-reclam']">Réclamations traitées</a>
+            </div>
         </div>
     </li>
-      <!-- Divider -->
-      <hr *ngIf="user" class="sidebar-divider">
+    <!-- Divider -->
+    <hr *ngIf="user" class="sidebar-divider">
 
 
-      <li *ngIf="user" class="nav-item">
-          <a class="nav-link" [routerLink]="['/retraite/reclamation']">
+    <li *ngIf="user" class="nav-item">
+        <a class="nav-link" [routerLink]="['/retraite/reclamation']">
             <i class="fas fa-exclamation-triangle"></i>
-              <span class="dashicons1">Réclamations</span>
-          </a>
-      </li>
+            <span class="dashicons1">Réclamations</span>
+        </a>
+    </li>
     <!-- Divider -->
     <hr *ngIf="admin" class="sidebar-divider">
 

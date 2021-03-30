@@ -46,7 +46,7 @@ const routes: Routes = [
   },
   {
     path:"retraite",
-    canActivateChild : [RetraiteGuard],
+    /*canActivateChild : [RetraiteGuard],*/
     children:
     [
       {
@@ -94,7 +94,7 @@ const routes: Routes = [
   },
   {
     path:"admin",
-    canActivateChild :[AdminGuard],
+    /*canActivateChild :[AdminGuard],*/
     children:
     [
       {
